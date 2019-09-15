@@ -1,5 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
-
+html {
+    background-color: gray;
+}
 .button-success {
     margin-top: 20px;
+}
+
+.card {
+    float: left;
+    padding-left: 15px;
+    padding-top: 20px;
+    height: 50%;
+    width: 50%;
+    margin-right: 20px;
+    align-content: center;
 }

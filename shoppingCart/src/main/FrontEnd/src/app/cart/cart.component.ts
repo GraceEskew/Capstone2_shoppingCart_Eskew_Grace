@@ -47,7 +47,7 @@ export class CartComponent implements OnInit {
     );
   }
 
-  //CAN I MESS WITH THE TAX CALC HERE? - nope. BE.
+
   calculateTotal() {
     this.total = this.productsInCart.reduce((total, currVal) => total + (currVal.price * currVal.quantity), 0)
   }
