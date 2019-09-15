@@ -22,9 +22,7 @@ public class ProductsService {
         return productsRepo.getOne(id);
     }
 
-//    public List<Products> getProductByCategory(String category) {
-//        return productsRepo.findByCategoryName(category);
-//    }
+
 
     //ADD ONE PRODUCT
     public Products addProduct(Products products) {
@@ -54,6 +52,10 @@ public class ProductsService {
         }
    }
 
+
+    public List<Products> findProductsByCategory(String category) {
+        return productsRepo.findProductsByCategory(category);
+    }
 
 
 }

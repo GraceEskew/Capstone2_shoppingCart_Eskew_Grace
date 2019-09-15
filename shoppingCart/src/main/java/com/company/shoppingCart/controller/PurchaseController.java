@@ -17,6 +17,6 @@ public class PurchaseController {
     @RequestMapping(value="/purchase", method = RequestMethod.POST)
     public Purchase createInvoice(@RequestBody @Valid Purchase invoice) {
             return purchaseService.generateInvoice(invoice);
-        }
+    }
 
 }

@@ -26,10 +26,10 @@ public class ProductsController {
     }
 
     // GET PRODUCT BY CATEGORY - not working (yet)
-//    @RequestMapping(value = "/products/{category}", method = RequestMethod.GET)
-//    public List<Products> findByCategoryName(@PathVariable String category) {
-//        return productsService.findByCategoryName(category);
-//    }
+    @RequestMapping(value = "/products/category/{category}", method = RequestMethod.GET)
+    public List<Products> findProductsByCategory(@PathVariable String category) {
+        return productsService.findProductsByCategory(category);
+    }
 
     // ADD A PRODUCT - working
     @RequestMapping(value="/products", method = RequestMethod.POST)
