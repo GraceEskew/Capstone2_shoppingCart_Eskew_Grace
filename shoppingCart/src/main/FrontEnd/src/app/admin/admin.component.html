@@ -58,29 +58,28 @@
 
 <h5>Inventory Management</h5>
 <ul class="list-group">
-    <li class="list-group-item" *ngFor="let product of allProducts">
+    <li class="list-group-item" *ngFor="let product of allProducts; let i = index">
         <span>{{ product.name }}</span>
 
+        <button class="btn btn-success float-right" (click)="onSaveProduct(product)">Save</button>
         <button class="btn btn-danger float-right" (click)="onDeleteProduct(product)">X</button>
         <button *ngIf="productIdBeingEdited !== product.id" class="btn btn-warning float-right" (click)="onStartEditProduct(product)">Edit</button>
         <button *ngIf="productIdBeingEdited == product.id" class="btn btn-primary float-right" (click)="onCancelEditProduct()">Cancel</button>
+
     </li>
 </ul>
 
 <!-- NOTES
 9/14: 
 
-
-AdminComponent.html:42 ERROR TypeError: _co.onStartEditProductItem is not a function
-
 core.js:6014 ERROR HttpErrorResponse {headers: HttpHeaders, status: 400, statusText: "OK", 
-    url: "http://localhost:8080/products", ok: false, …}
+url: "http://localhost:8080/products", ok: false, …}
 
 
 addProductForm matches addProductForm in admin.component.ts
 Event type is ngSubmit; whenever the form is submitted - it will run the method onSubmitForm()
-   onSubmitForm() matches method created in admin.component.ts
+nSubmitForm() matches method created in admin.component.ts
 
 
-
+9:16: Line 64- Onboarding for save button for updating form. Currently when I try to add any methodology to it - it kicks
 -->
