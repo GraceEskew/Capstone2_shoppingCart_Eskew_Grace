@@ -1,0 +1,86 @@
+<form [formGroup]="addProductForm" (ngSubmit)="onSubmitForm()">
+    <div class="form-group">
+        <h5>Add a Product</h5>
+
+        <!--FORM LABELS / INPUTS-->
+        <label for="nameProduct">Name of Product</label>
+        <input formControlName="name" type="text" class="form-control" placeholder="Name">
+
+        <br>
+
+        <label for="categoryProduct">Category of Product</label>
+        <input formControlName="category" type="text" class="form-control" placeholder="Category">
+
+        <br>
+
+        <label for="priceProduct">Price of Product</label>
+        <input formControlName="price" type="number" class="form-control" placeholder="Price">
+
+        <br>
+
+        <label for="importProduct">Is the Product Imported?</label>
+        <input formControlName="isImported" type="text" class="form-control" placeholder="Imported? True or false">
+
+        <br>
+
+        <label for="importTaxRate">Import Tax Rate</label>
+        <input formControlName="importTax" type="number" class="form-control" placeholder="Please enter import tax rate (or 0 if it doesn't apply">
+
+        <br>
+
+        <label for="isTaxed">Does Sales Tax Apply?</label>
+        <input formControlName="isTaxed" type="text" class="form-control" placeholder="Does Sales Tax Apply? True or false">
+
+        <br>
+
+        <label for="salesTaxRate">Sales Tax Rate</label>
+        <input formControlName="salesTax" type="number" class="form-control" placeholder="Please enter sales tax rate (or 0 if it doesn't apply">
+
+        <br>
+        
+        <label for="quantityProduct">Quantity of Products</label>
+        <input formControlName="quantity" type="number" class="form-control" placeholder="Quantity">
+
+        <br>
+        
+        <label for="imageProduct">Image URL of Product</label>
+        <input formControlName="imageUrl" type="text" class="form-control" placeholder="Image Url">
+
+        <!--FORM SUBMIT BUTTON-->
+        <button class="btn btn-success float-right" type="submit">Submit</button>
+        
+    </div>
+</form>
+
+<br>
+<br>
+
+
+<h5>Inventory Management</h5>
+<ul class="list-group">
+    <li class="list-group-item" *ngFor="let product of allProducts">
+        <span>{{ product.name }}</span>
+
+        <button class="btn btn-danger float-right" (click)="onDeleteProduct(product)">X</button>
+        <button *ngIf="productIdBeingEdited !== product.id" class="btn btn-warning float-right" (click)="onStartEditProduct(product)">Edit</button>
+        <button *ngIf="productIdBeingEdited == product.id" class="btn btn-primary float-right" (click)="onCancelEditProduct()">Cancel</button>
+    </li>
+</ul>
+
+<!-- NOTES
+9/14: 
+
+
+AdminComponent.html:42 ERROR TypeError: _co.onStartEditProductItem is not a function
+
+core.js:6014 ERROR HttpErrorResponse {headers: HttpHeaders, status: 400, statusText: "OK", 
+    url: "http://localhost:8080/products", ok: false, …}
+
+
+addProductForm matches addProductForm in admin.component.ts
+Event type is ngSubmit; whenever the form is submitted - it will run the method onSubmitForm()
+   onSubmitForm() matches method created in admin.component.ts
+
+
+
+-->

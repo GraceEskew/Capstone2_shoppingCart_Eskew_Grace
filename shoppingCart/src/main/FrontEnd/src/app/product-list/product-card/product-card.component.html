@@ -1,0 +1,20 @@
+
+<div class="wrapper">
+    <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="https://image.shutterstock.com/image-vector/placeholder-icon-vector-on-white-600w-1284738913.jpg" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">{{ products.name }}</h5>
+            <p>{{ products.category }}</p>
+        
+            <span class="float-left">Price: {{ products.price | currency }}</span>
+            <!-- <span class="float-right">Available: {{ produce.quantity }}</span> <br> -->
+        
+            <br>
+            <div class="row">
+                <input [(ngModel)]="qtyToPurchase" type="number" class="form-control" placeholder="Quantity" [max]="products.quantity">
+                <button type="button" class="btn btn-success" [class.disabled]="qtyToPurchase > products.quantity" (click)="onAddToCart(products)">{{ buttonText }}</button>
+            </div>
+      </div>
+
+</div>
+

@@ -1,0 +1,19 @@
+<input [(ngModel)]="searchTerm" class="form-control" placeholder="Search">
+
+<div *ngFor="let products of (allProducts | search: searchTerm)" class="card" style="width: 18rem;">
+    <app-product-card [products]=products></app-product-card>
+</div>
+
+
+
+
+
+<!-- NOTES
+
+
+
+-->
+
+
+
+
