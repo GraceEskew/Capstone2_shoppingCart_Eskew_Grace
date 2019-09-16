@@ -24,11 +24,12 @@ export class CartService {
     });
 
     if (!productAlreadyInCart) {
-      const newProducts = new Products(products.name, products.category, products.price, products.salesTax, qty, products.quantity);
+      const newProducts = new Products(products.name, products.category, products.price, products.isImported, products.importTax, products.isTaxed, products.salesTax, products.quantity, products.available);
       newProducts.id = products.id;
       this.productsInCart.push(newProducts);
     }
   }
+
 
   getProductsInCart(): Products[] {
     return this.productsInCart;

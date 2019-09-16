@@ -16,6 +16,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 //added ClientModule to remove "Uncaught (in promise) Console error
 import { HttpClientModule } from '@angular/common/http';
+// import { CategorySearchPipe } from './category-search.pipe';
 
 
 @NgModule({
@@ -30,6 +31,7 @@ import { HttpClientModule } from '@angular/common/http';
     AdminComponent,
     ProductsMasterComponent,
     ProductDetailComponent,
+    // CategorySearchPipe,
 
   ],
   imports: [

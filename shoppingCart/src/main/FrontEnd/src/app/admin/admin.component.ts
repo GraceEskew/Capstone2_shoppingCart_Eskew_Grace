@@ -80,10 +80,15 @@ export class AdminComponent implements OnInit {
     const name = this.addProductForm.value.name;
     const category = this.addProductForm.value.category;
     const price = this.addProductForm.value.price;
+    const isImported = this.addProductForm.value.isImported;
+    const importTax = this.addProductForm.value.importTax;
+    const isTaxed = this.addProductForm.value.isTaxed;
+    const salesTax = this.addProductForm.value.salesTax;
     const quantity = this.addProductForm.value.quantity;
     const imageUrl = this.addProductForm.value.imageUrl;
 
-    const newProducts = new Products(name, category, price, quantity, imageUrl)
+    const newProducts = new Products(name, category, price, isImported, importTax, isTaxed, salesTax, quantity, imageUrl)
+
 
     if(this.productIdBeingEdited == undefined) {
       this.postSub = this.productsService.addProduct(newProducts).subscribe(

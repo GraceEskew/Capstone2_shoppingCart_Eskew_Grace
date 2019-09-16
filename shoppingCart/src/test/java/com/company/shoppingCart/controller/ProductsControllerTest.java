@@ -40,18 +40,7 @@ public class ProductsControllerTest {
     Products p2;
     Products p3;
 
-    //2nd set
-    Products p4;
-    Products p5;
-
-    //3rd set
-    Products p6;
-    Products p7;
-    Products p8;
-    Products p9;
-
     List<Products> productsList;
-
 
     // standalone - used to just test the products Controller
     @Before
@@ -61,72 +50,39 @@ public class ProductsControllerTest {
 
         //TEST PRODUCTS SET 1 *************************************************************
         p1 = new Products();
-        p1.setName("Children's Book");
+        p1.setName("The Cat in the Hat");
         p1.setPrice(12.49f);
         p1.setIsImported(false);
+        p1.setImportTax(0.00f);
         p1.setIsTaxed(false);
-        p1.setCategory("Books");
+        p1.setSalesTax(0.00f);
+        p1.setQuantity(5);
+        p1.setCategory("books");
+        p1.setImgUrl("void");
 
         p2 = new Products();
-        p2.setName("Sing-A-Long");
+        p2.setName("The Great War");
         p2.setPrice(14.99f);
         p2.setIsImported(false);
+        p2.setImportTax(0.00f);
         p2.setIsTaxed(true);
-        p2.setCategory("Music");
+        p2.setSalesTax(1.50f);
+        p2.setQuantity(50);
+        p2.setCategory("music");
+        p2.setImgUrl("void");
 
         p3 = new Products();
-        p3.setName("Chocolate Bar");
+        p3.setName("Dark Chocolate Bar - 12oz");
         p3.setPrice(0.85f);
         p3.setIsImported(false);
-        p3.setIsTaxed(false);
-        p3.setCategory("Food");
+        p3.setImportTax(0.00f);
+        p3.setIsTaxed(true);
+        p3.setSalesTax(0.10f);
+        p3.setQuantity(100);
+        p3.setCategory("luxury goods");
+        p3.setImgUrl("void");
 
-        //TEST PRODUCTS SET 2 *************************************************************
-        p4 = new Products();
-        p4.setName("Le Chocolat");
-        p4.setPrice(10.00f);
-        p4.setIsImported(true);
-        p4.setIsTaxed(false);
-        p4.setCategory("Food");
-
-        p5 = new Products();
-        p5.setName("Le Stinque");
-        p5.setPrice(47.50f);
-        p5.setIsImported(true);
-        p5.setIsTaxed(true);
-        p5.setCategory("Luxury Items");
-
-        //TEST PRODUCTS SET 3 *************************************************************
-        p6 = new Products();
-        p6.setName("Le Fume");
-        p6.setPrice(27.99f);
-        p6.setIsImported(true);
-        p6.setIsTaxed(true);
-        p6.setCategory("Luxury Items");
-
-        p7 = new Products();
-        p7.setName("Smells like Teen Spirit");
-        p7.setPrice(18.99f);
-        p7.setIsImported(false);
-        p7.setIsTaxed(true);
-        p7.setCategory("Luxury Items");
-
-        p8 = new Products();
-        p8.setName("Migraine Relief");
-        p8.setPrice(9.75f);
-        p8.setIsImported(false);
-        p8.setIsTaxed(false);
-        p8.setCategory("Medicine");
-
-        p9 = new Products();
-        p9.setName("Le Nomz");
-        p9.setPrice(11.85f);
-        p9.setIsImported(false);
-        p9.setIsTaxed(false);
-        p9.setCategory("Food");
-        //thrown off by the extra sales tax in the requirements. Do I add this as a seperate property?
-
-        productsList = Arrays.asList(p1, p2, p3, p4, p5, p6, p7, p8, p9);
+        productsList = Arrays.asList(p1, p2, p3);
     }
 
     //Test 1: Simulates 404
@@ -143,7 +99,7 @@ public class ProductsControllerTest {
 
         mockMvc.perform(get("/products"))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$", hasSize(9)))
+                .andExpect(jsonPath("$", hasSize(3)))
                 .andExpect(jsonPath("$[0].name", is(productsList.get(0).getName())));
 
         verify(mockProductsService).getAllProducts();

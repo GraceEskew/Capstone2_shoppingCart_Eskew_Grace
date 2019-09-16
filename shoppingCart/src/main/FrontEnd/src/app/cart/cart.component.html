@@ -11,13 +11,14 @@
         </tr>
     </thead>
 
-    <!--trying to inject sales tax with the currency pipe - not showing up-->
+    <!--trying to inject sales tax (currency pipe for styling) - not showing up-->
     <tbody>
         <tr *ngFor="let p of productsInCart; let i = index">
             <td>{{ p.name }}</td>
             <td><button class="btn btn-info" [class.disabled]="p.Quantity == 0" (click)="onDecreaseQty(p)">-</button>&nbsp;{{ p.quantity }}&nbsp;<button class="btn btn-info" [class.disabled]="p.quantity == p.available" (click)="onIncreaseQty(p)">+</button></td>
             <td>{{ p.price | currency }}</td>
             <td>{{ p.salesTax | currency }}</td>
+            <td>{{ p.importTax | currency}}</td>
 
             <td><button class="btn btn-danger float-right" (click)="onRemoveProductsFromCart(i)">X</button></td>
         </tr>

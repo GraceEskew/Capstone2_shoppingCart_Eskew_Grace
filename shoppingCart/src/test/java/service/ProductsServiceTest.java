@@ -31,26 +31,60 @@ public class ProductsServiceTest {
 
     Products p1;
     Products p2;
+    Products p3;
+    Products p4;
 
     List<Products> productsList;
 
     @Before
-    public void setU() {
+    public void setUp() {
+
         p1 = new Products();
-        p1.setName("Children's Book");
-        p1.setPrice(12.49f);
-        p1.setIsImported(false);
-        p1.setIsTaxed(false);
-        p1.setCategory("Books");
+        p1.setName("Return of Pepe Le Pew");
+        p1.setPrice(27.99f);
+        p1.setIsImported(true);
+        p1.setImportTax(1.40f);
+        p1.setIsTaxed(true);
+        p1.setSalesTax(2.80f);
+        p1.setQuantity(1);
+        p1.setCategory("luxury goods");
+        p1.setImgUrl("void");
 
         p2 = new Products();
-        p2.setName("Sing-A-Long");
-        p2.setPrice(14.99f);
+        p2.setName("Smells Like Teen Spirit (The Perfume)");
+        p2.setPrice(18.99f);
         p2.setIsImported(false);
+        p2.setImportTax(0.00f);
         p2.setIsTaxed(true);
-        p2.setCategory("Music");
+        p2.setSalesTax(1.90f);
+        p2.setQuantity(10);
+        p2.setCategory("luxury goods");
+        p2.setImgUrl("void");
 
-        productsList = Arrays.asList(p1, p2);
+        p3 = new Products();
+        p3.setName("Migraine Relief - Single Pack");
+        p3.setPrice(9.75f);
+        p3.setIsImported(false);
+        p3.setImportTax(0.00f);
+        p3.setIsTaxed(false);
+        p3.setSalesTax(0.00f);
+        p3.setQuantity(10);
+        p3.setCategory("medical supplies");
+        p3.setImgUrl("void");
+
+        p4 = new Products();
+        p4.setName("German Chocolates - 1 box");
+        p4.setPrice(11.25f);
+        p4.setIsImported(true);
+        p4.setImportTax(0.60f);
+        p4.setIsTaxed(true);
+        p4.setSalesTax(1.15f);
+        p4.setQuantity(50);
+        p4.setCategory("luxury goods");
+        p4.setImgUrl("void");
+
+
+        productsList = Arrays.asList(p1, p2, p3, p4);
     }
 
     @Test

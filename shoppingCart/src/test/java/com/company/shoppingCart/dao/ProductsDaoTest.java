@@ -31,24 +31,26 @@ public class ProductsDaoTest {
         productsRepo.deleteAll();
 
         p1 = new Products();
-        p1.setName("Le Chocolat");
-        p1.setPrice(10.00f);
+        p1.setName("Unusually Fancy Chocolate");
+        p1.setPrice(14.99f);
         p1.setIsImported(true);
-        p1.setImportTax(0.05f);
-        p1.setIsTaxed(false);
-        p1.setSalesTax(.10f);
-        p1.setCategory("Food");
-        p1.setQuantity(1);
+        p1.setImportTax(0.75f);
+        p1.setIsTaxed(true);
+        p1.setSalesTax(1.50f);
+        p1.setQuantity(50);
+        p1.setCategory("luxury goods");
+        p1.setImgUrl("none");
 
         p2 = new Products();
-        p2.setName("Le Stinque");
+        p2.setName("Le Stinque Perfume");
         p2.setPrice(47.50f);
         p2.setIsImported(true);
-        p2.setImportTax(0.05f);
-        p2.setSalesTax(0.10f);
+        p2.setImportTax(2.40f);
         p2.setIsTaxed(true);
-        p2.setCategory("Luxury Items");
+        p2.setSalesTax(4.75f);
         p2.setQuantity(1);
+        p2.setCategory("luxury goods");
+        p2.setImgUrl("none");
     }
 
     @Test
@@ -64,8 +66,6 @@ public class ProductsDaoTest {
         List<Products> fromRepo = productsRepo.findAll();
 
         assertEquals(productsList, fromRepo);
-
-//        assertEquals(productsList, fromRepo);
     }
 
     @Test
@@ -102,10 +102,6 @@ public class ProductsDaoTest {
 
         Optional<Products> fromRepo = productsRepo.findById(p1.getId());
         assertFalse(fromRepo.isPresent());
-
-//        List<Products> fromRepo = productsRepo.findAll();
-//
-//        assertEquals(fromRepo.size(), 0);
     }
 
 

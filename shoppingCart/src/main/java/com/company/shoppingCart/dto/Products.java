@@ -34,6 +34,8 @@ public class Products {
     private Integer quantity;
     @NotEmpty
     private String category;
+    @NotEmpty
+    private String imgUrl;
 //    @NotNull
 //    private Float subTotal;
 //    @NotNull
@@ -69,6 +71,9 @@ public class Products {
 
     public String getCategory() {return this.category;}
     public void setCategory(String category) {this.category = category;}
+
+    public String getImgUrl() {return this.imgUrl;}
+    public void setImgUrl(String imgUrl) {this.imgUrl = imgUrl;}
 
 //    public Float getSubTotal() {return this.subTotal;}
 //    public void setSubTotal(Float subTotal) {this.subTotal = subTotal;}

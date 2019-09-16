@@ -25,6 +25,8 @@ public class PurchaseService {
         invoice.setSalesTax(purchase.getSalesTax());
         invoice.setImportTax(purchase.getImportTax());
         invoice.setTotalTax(addTaxes(invoice));
+
+        //running into variable issue between invoice and Float for addTaxes();. Commented out while investigating.
 //        invoice = addTaxes(invoice);
         invoice.setTotalCost(purchase.getTotalCost());
 //        invoice = totalCost(invoice);
@@ -33,6 +35,7 @@ public class PurchaseService {
     }
 
     private Float addTaxes(Purchase invoice) {
+        //OPT B FOR CALCULATIONS - UnitPrice*1.05 or 1.10 = combinedTotal - UnitPrice = TaxTotal
 
         //IF ITEM CAN BE TAXED BOTH WAYS
         if (invoice.getIsTaxable() && invoice.getIsImported()) {
