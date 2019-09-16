@@ -22,8 +22,6 @@ public class ProductsService {
         return productsRepo.getOne(id);
     }
 
-
-
     //ADD ONE PRODUCT
     public Products addProduct(Products products) {
         return productsRepo.save(products);
@@ -34,7 +32,6 @@ public class ProductsService {
         if (products.getId() == id) {
             return productsRepo.save(products);
         }
-
         return null;
     }
 

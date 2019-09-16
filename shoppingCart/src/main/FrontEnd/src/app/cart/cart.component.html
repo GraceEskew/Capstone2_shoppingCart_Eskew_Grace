@@ -5,9 +5,9 @@
             <th scope="col">Name</th>
             <th scope="col">Quantity</th>
             <th scope="col">Unit Price</th>
-            <th scope="col">Sales Tax</th>
-            <th scope="col">Import Tax</th>
-            <th scope="col">Sub Total</th>
+            <!-- <th scope="col">Sales Tax</th>
+            <th scope="col">Import Tax</th> -->
+            <!-- <th scope="col">Sub Total</th> -->
         </tr>
     </thead>
 
@@ -16,8 +16,8 @@
             <td>{{ p.name }}</td>
             <td><button class="btn btn-info" [class.disabled]="p.quantity == 0" (click)="onDecreaseQty(p)">-</button>&nbsp;{{ p.quantity }}&nbsp;<button class="btn btn-info" [class.disabled]="p.quantity == p.available" (click)="onIncreaseQty(p)">+</button></td>
             <td>{{ p.price | currency }}</td>
-            <td>{{ p.salesTax | currency }}</td>
-            <td>{{ p.importTax | currency}}</td>
+            <!-- <td>{{ p.salesTax | currency }}</td>
+            <td>{{ p.importTax | currency}}</td> -->
 
             <td><button class="btn btn-danger float-right" (click)="onRemoveProductsFromCart(i)">X</button></td>
         </tr>
@@ -27,7 +27,7 @@
 
 <strong *ngIf="productsInCart.length > 0">Total: {{ total | currency }}</strong>
 <br>
-<strong *ngIf="productsInCart.length > 0">Total Taxes: {{ taxes | currency }}</strong>
+<!-- <strong *ngIf="productsInCart.length > 0">Total Taxes: {{ taxes | currency }}</strong> -->
 <br>
 <br>
 <button *ngIf="productsInCart.length > 0" class="btn btn-success" (click)="onPurchase()">Purchase</button>

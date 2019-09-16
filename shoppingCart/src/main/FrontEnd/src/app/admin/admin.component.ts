@@ -2,8 +2,8 @@
 
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
-import { Products } from '../products';
-import { ProductsService } from '../products.service'
+import { Products } from '../shared/products';
+import { ProductsService } from '../shared/products.service'
 import { Subscription } from 'rxjs';
 
 @Component({

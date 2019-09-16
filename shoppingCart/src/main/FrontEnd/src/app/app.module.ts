@@ -9,7 +9,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { ProductCardComponent } from './product-list/product-card/product-card.component';
-import { SearchPipe } from './search.pipe';
+import { SearchPipe } from './shared/search.pipe';
 import { ProductsMasterComponent } from './product-list/product-card/products-master/products-master.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';

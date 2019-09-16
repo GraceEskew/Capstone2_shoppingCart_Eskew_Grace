@@ -49,7 +49,7 @@ public class ProductsController {
         productsService.deleteProductById(id);
     }
 
-    // PURCHASE A PRODUCT
+    // PURCHASE A PRODUCT - working
     @RequestMapping(value = "/purchase", method = RequestMethod.POST)
     public void purchase(@RequestBody @Valid Products[] products) {
         productsService.purchase(products);
