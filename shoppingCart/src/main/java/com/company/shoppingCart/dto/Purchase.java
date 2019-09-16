@@ -4,7 +4,7 @@ public class Purchase {
 
 private Integer productId;
 private String category;
-private Boolean isTaxable;
+private Boolean isTaxed;
 private Boolean isImported;
 private Float unitPrice;
 private Float quantity;
@@ -23,8 +23,8 @@ public void setProductId(Integer productId) {this.productId = productId;}
 public String getCategory() {return this.category;}
 public void setCategory(String category) {this.category = category;}
 
-public Boolean getIsTaxable() {return this.isTaxable;}
-public void setIsTaxable(Boolean isTaxable) {this.isTaxable = isTaxable;}
+public Boolean getIsTaxed() {return this.isTaxed;}
+public void setIsTaxable(Boolean isTaxable) {this.isTaxed = isTaxable;}
 
 public Boolean getIsImported() {return this.isImported;}
 public void setIsImported(Boolean isImported) {this.isImported = isImported;}

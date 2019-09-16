@@ -14,9 +14,9 @@ public class PurchaseController {
     @Autowired
     PurchaseService purchaseService;
 
-    @RequestMapping(value="/purchase", method = RequestMethod.POST)
-    public Purchase createInvoice(@RequestBody @Valid Purchase invoice) {
-            return purchaseService.generateInvoice(invoice);
-    }
+//    @RequestMapping(value="/purchase", method = RequestMethod.POST)
+//    public Purchase createInvoice(@RequestBody @Valid Purchase invoice) {
+//            return purchaseService.generateInvoice(invoice);
+//    }
 
 }

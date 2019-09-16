@@ -43,6 +43,8 @@ public class ProductsService {
         productsRepo.deleteById(id);
     }
 
+
+    //PURCHASE PRODUCTS
     public void purchase(Products[] products) {
         for (Products p : products) {
             Products currProducts = this.getProductById(p.getId());

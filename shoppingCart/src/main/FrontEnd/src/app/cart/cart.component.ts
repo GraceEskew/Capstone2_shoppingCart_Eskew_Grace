@@ -24,6 +24,7 @@ export class CartComponent implements OnInit {
   }
 
   onRemoveProductsFromCart(index: number) {
+    //cart service getting called
     this.cartService.removeProductFromCart(index);
     this.getProductsInCart();
     this.calculateTotal();

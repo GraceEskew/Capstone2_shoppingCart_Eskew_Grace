@@ -23,8 +23,10 @@ export class CartService {
       return i;
     });
 
+
+    //thinking I have an issue of Quantity vs qty -- causing receipt issue where the max Quantity appears vs qty (what is being purchased)
     if (!productAlreadyInCart) {
-      const newProducts = new Products(products.name, products.category, products.price, products.isImported, products.importTax, products.isTaxed, products.salesTax, products.quantity, products.available);
+      const newProducts = new Products(products.name, products.category, products.price, products.isImported, products.importTax, products.isTaxed, products.salesTax, qty, products.imgUrl, products.quantity);
       newProducts.id = products.id;
       this.productsInCart.push(newProducts);
     }

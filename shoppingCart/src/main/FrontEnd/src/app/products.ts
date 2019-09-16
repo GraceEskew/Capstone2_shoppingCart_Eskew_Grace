@@ -8,10 +8,11 @@ export class Products {
     isTaxed: String;
     salesTax: number;
     quantity: number;
+    imgUrl: String;
     available: number; 
-    imageUrl: String;
 
-    constructor(name: String, category: String, price: number, isImported: String, importTax: number, isTaxed: String, salesTax: number, quantity: number, available?: number) {
+
+    constructor(name: String, category: String, price: number, isImported: String, importTax: number, isTaxed: String, salesTax: number, quantity: number, imgUrl: String, available?: number) {
         this.name = name;
         this.category = category;
         this.price = price;
@@ -20,7 +21,7 @@ export class Products {
         this.isTaxed = isTaxed;
         this.salesTax = salesTax;
         this.quantity = quantity;
+        this.imgUrl = this.imgUrl;
         this.available = available;
-        this.imageUrl = this.imageUrl;
     }
 }

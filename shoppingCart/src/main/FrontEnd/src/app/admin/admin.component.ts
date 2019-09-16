@@ -27,6 +27,7 @@ export class AdminComponent implements OnInit {
     isTaxed: [''],
     salesTax: [''],
     quantity: [''],
+    available: [''],
     imageUrl: ['']
 
   });
@@ -85,9 +86,9 @@ export class AdminComponent implements OnInit {
     const isTaxed = this.addProductForm.value.isTaxed;
     const salesTax = this.addProductForm.value.salesTax;
     const quantity = this.addProductForm.value.quantity;
-    const imageUrl = this.addProductForm.value.imageUrl;
+    const imgUrl = this.addProductForm.value.imgUrl;
 
-    const newProducts = new Products(name, category, price, isImported, importTax, isTaxed, salesTax, quantity, imageUrl)
+    const newProducts = new Products(name, category, price, isImported, importTax, isTaxed, salesTax, quantity, imgUrl)
 
 
     if(this.productIdBeingEdited == undefined) {

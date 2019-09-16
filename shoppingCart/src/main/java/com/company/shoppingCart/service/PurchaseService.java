@@ -17,7 +17,7 @@ public class PurchaseService {
 
         invoice.setProductId(purchase.getProductId());
         invoice.setCategory(purchase.getCategory());
-        invoice.setIsTaxable(purchase.getIsTaxable());
+        invoice.setIsTaxable(purchase.getIsTaxed());
         invoice.setIsImported(purchase.getIsImported());
         invoice.setUnitPrice(purchase.getUnitPrice());
         invoice.setQuantity(purchase.getQuantity());
@@ -38,18 +38,18 @@ public class PurchaseService {
         //OPT B FOR CALCULATIONS - UnitPrice*1.05 or 1.10 = combinedTotal - UnitPrice = TaxTotal
 
         //IF ITEM CAN BE TAXED BOTH WAYS
-        if (invoice.getIsTaxable() && invoice.getIsImported()) {
+        if (invoice.getIsTaxed() && invoice.getIsImported()) {
             invoice.setTotalTax((invoice.getImportTax()*invoice.getQuantity())+
                     (invoice.getSalesTax()+invoice.getQuantity()));
             return invoice.getTotalTax();
 
             //IF ITEM CAN ONLY BE TAXED - SALES
-        } else if (invoice.getIsTaxable() && !invoice.getIsImported()) {
+        } else if (invoice.getIsTaxed() && !invoice.getIsImported()) {
             invoice.setTotalTax((invoice.getSalesTax()*invoice.getQuantity()));
             return invoice.getTotalTax();
 
             //IF ITEM CAN ONLY BE TAXED - IMPORT
-        } else if (!invoice.getIsTaxable() && invoice.getIsImported()) {
+        } else if (!invoice.getIsTaxed() && invoice.getIsImported()) {
             invoice.setTotalTax(invoice.getImportTax()* invoice.getQuantity());
             return invoice.getTotalTax();
 

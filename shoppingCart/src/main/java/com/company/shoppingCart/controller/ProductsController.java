@@ -50,7 +50,7 @@ public class ProductsController {
     }
 
     // PURCHASE A PRODUCT
-    @RequestMapping(value="/purchase", method = RequestMethod.GET)
+    @RequestMapping(value = "/purchase", method = RequestMethod.POST)
     public void purchase(@RequestBody @Valid Products[] products) {
         productsService.purchase(products);
     }
